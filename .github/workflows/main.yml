@@ -18,4 +18,4 @@ jobs:
       - name: 'Run Azure CLI commands'
         id: get-swa-key
         run: |
-          echo "DEPLOYKEY=$(az staticwebapp secrets list -n fhirwatch)" >> $GITHUB_OUTPUT
+          echo $(az staticwebapp secrets list -n fhirwatch)
