@@ -1,7 +1,8 @@
 name: Build and deploy Function App & Static Web App
 on:  
   workflow_dispatch:
-
+env:
+  AZURE_SUBSCRIPTION_ID: '1c642d88-5042-4d19-9d49-49be6612a40f'
 jobs: 
   build_and_deploy_job:
     runs-on: ubuntu-latest
