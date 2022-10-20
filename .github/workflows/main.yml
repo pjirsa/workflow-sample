@@ -19,7 +19,7 @@ jobs:
         id: get-swa-key
         run: |
           result=$(az staticwebapp secrets list -n fhirwatch | jq -r ".properties.apiKey")
-          echo 'APIKEY=$result' >> $GITHUB_OUTPUT
+          echo "APIKEY=$result" >> $GITHUB_OUTPUT
       - name: 'Test Output'
         run: |
           echo ${{ steps.get-swa-key.outputs.APIKEY }}
