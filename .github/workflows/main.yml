@@ -18,4 +18,5 @@ jobs:
       - name: 'Run Azure CLI commands'
         id: get-swa-key
         run: |
-          echo $(az staticwebapp secrets list -n fhirwatch --query "properties.apiKey")
+          key=$(az staticwebapp secrets list -n fhirwatch --query "properties.apiKey")
+          echo $key | xargs
