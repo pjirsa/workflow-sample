@@ -18,7 +18,8 @@ jobs:
       - name: 'Run Azure CLI commands'
         id: get-swa-key
         run: |
-          echo 'APIKEY=$(az staticwebapp secrets list -n fhirwatch | jq -r ".properties.apiKey")' >> $GITHUB_OUTPUT
+          result=$(az staticwebapp secrets list -n fhirwatch | jq -r ".properties.apiKey")
+          echo 'APIKEY=$result' >> $GITHUB_OUTPUT
       - name: 'Test Output'
         run: |
           echo ${{ steps.get-swa-key.outputs.APIKEY }}
